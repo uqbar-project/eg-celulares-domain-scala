@@ -27,6 +27,12 @@
 			<artifactId>util-commons</artifactId>
 			<version>${arena-version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>net.sf.oval</groupId>
+			<artifactId>oval</artifactId>
+			<version>1.82</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
