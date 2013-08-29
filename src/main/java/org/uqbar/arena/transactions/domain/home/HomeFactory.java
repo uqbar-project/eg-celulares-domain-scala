@@ -1,4 +1,4 @@
-package ar.edu.unq.tpi.tip.example.home;
+package org.uqbar.arena.transactions.domain.home;
 
 import java.util.Map;
 

@@ -1,14 +1,14 @@
-package ar.edu.unq.tpi.tip.example;
+package org.uqbar.arena.transactions.domain;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import org.uqbar.arena.transactions.domain.home.DefaultPersistentHomeFactory;
+import org.uqbar.arena.transactions.domain.home.HomeFactory;
 import org.uqbar.commons.model.Application;
 import org.uqbar.commons.model.Entity;
 import org.uqbar.commons.model.Home;
 
-import ar.edu.unq.tpi.tip.example.home.DefaultPersistentHomeFactory;
-import ar.edu.unq.tpi.tip.example.home.HomeFactory;
 
 
 public class Bank implements Application {

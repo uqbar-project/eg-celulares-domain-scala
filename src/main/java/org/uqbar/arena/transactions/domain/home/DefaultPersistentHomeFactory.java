@@ -1,11 +1,11 @@
-package ar.edu.unq.tpi.tip.example.home;
+package org.uqbar.arena.transactions.domain.home;
 
 import java.util.Map;
 
+import org.uqbar.arena.transactions.domain.Account;
+import org.uqbar.arena.transactions.domain.Client;
 import org.uqbar.commons.model.Home;
 
-import ar.edu.unq.tpi.tip.example.Account;
-import ar.edu.unq.tpi.tip.example.Client;
 
 public class DefaultPersistentHomeFactory implements HomeFactory {
 

@@ -1,13 +1,13 @@
-package ar.edu.unq.tpi.tip.example.home;
+package org.uqbar.arena.transactions.domain.home;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.collections15.Predicate;
+import org.uqbar.arena.transactions.domain.Account;
+import org.uqbar.arena.transactions.domain.Client;
 import org.uqbar.commons.model.CollectionBasedHome;
 
-import ar.edu.unq.tpi.tip.example.Account;
-import ar.edu.unq.tpi.tip.example.Client;
 
 
 public class ClientColeccionImpl extends CollectionBasedHome<Client> {

@@ -1,9 +1,9 @@
-package ar.edu.unq.tpi.tip.example.home;
+package org.uqbar.arena.transactions.domain.home;
 
 import org.apache.commons.collections15.Predicate;
+import org.uqbar.arena.transactions.domain.Account;
 import org.uqbar.commons.model.CollectionBasedHome;
 
-import ar.edu.unq.tpi.tip.example.Account;
 
 
 public class AccountColeccionImpl extends CollectionBasedHome<Account> {

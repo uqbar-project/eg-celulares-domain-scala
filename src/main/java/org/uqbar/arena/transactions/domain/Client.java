@@ -1,4 +1,4 @@
-package ar.edu.unq.tpi.tip.example;
+package org.uqbar.arena.transactions.domain;
 
 import java.util.ArrayList;
 import java.util.List;
