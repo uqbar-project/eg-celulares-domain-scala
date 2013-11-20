@@ -8,11 +8,20 @@ import scala.collection.JavaConverters._
 import scala.collection.mutable.Buffer
 
 @TransactionalAndObservable
-class Client(var dni: Long = 0, var name: String = "", var password: String = "", var email: String = "") extends Entity {
-
-  def this() {
-    this(0)
+class Client extends Entity {
+  var dni: Long = _
+  var name: String = _ 
+  var password: String = _
+  var email: String = _
+  
+  def this(dni: Long, name: String , password: String, email: String){
+    this()
+    this.dni = dni
+    this.name = name
+    this.password = password
+    this.email = email
   }
+
   var accounts: java.util.List[Account] = Buffer[Account]()
 
   def addAccount(account: Account) {

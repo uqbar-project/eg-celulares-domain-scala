@@ -11,19 +11,14 @@ object Transaction {
 }
 @TransactionalAndObservable
 class Transaction {
-  @BeanProperty var source: Account = null
-  @BeanProperty var destination: Account = null
-  @BeanProperty var amount: Double = 0d
   
+  var source: Account=_
+  var destination: Account =_
+  var amount: Double = _
+
   def execute() {
     source.withdraw(amount)
     destination.deposit(amount)
-  }
-
-  def clear() {
-    this.amount = 0;
-    this.source = null;
-    this.destination = null;
   }
 
   override def toString() = s"source: $source  destiny: $destination  amount: $amount"

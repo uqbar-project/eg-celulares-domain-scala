@@ -6,31 +6,31 @@ import org.uqbar.commons.utils.TransactionalAndObservable
 import scala.reflect.BeanProperty
 
 @TransactionalAndObservable
-class Account() extends Entity {
-	@BeanProperty var balance : Double = 0
-	@BeanProperty var owner : Client = null
-  
-	def this(b: Double, o :Client) {
-	  this()
-	  balance = b
-	  owner = o
-	}
-	
-	def this(b: Double, o :Client, id:Int){
-	  this(b, o)
-	  owner.addAccount(this)
-	  setId(id);
-	}
+class Account extends Entity {
+  var balance: Double = _
+  var owner: Client = _
 
-	def withdraw(amount:Double) = {
-		if(balance < amount){
-			throw new UserException("Fondos insuficientes")			
-		}
-		balance -= amount
-	}
+  def this(balance: Double, owner: Client, id: Int) {
+    this()
+    this.balance = balance
+    this.owner = owner
+    owner.addAccount(this)
+    setId(id);
+  }
 
-	def deposit(amount:Double)  = balance += amount
-	
-	override def toString() =  s"Account -> owner: $owner balance: $balance"
-	
+  def this(owner: Client) {
+    this(0, owner, 0)
+  }
+
+  def withdraw(amount: Double) = {
+    if (balance < amount) {
+      throw new UserException("Fondos insuficientes")
+    }
+    balance -= amount
+  }
+
+  def deposit(amount: Double) = balance += amount
+
+  override def toString() = s"Account -> owner: $owner balance: $balance"
+
 }
