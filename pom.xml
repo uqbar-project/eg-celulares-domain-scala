@@ -6,27 +6,28 @@
 	<artifactId>transactions-domain</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>transactions-domain</name>
 
 	<parent>
 		<groupId>org.uqbar-project</groupId>
-		<artifactId>uqbar-parent-project</artifactId>
-		<version>1.7</version>
+		<artifactId>uqbar-scala-parent</artifactId>
+		<version>1.0</version>
 	</parent>
+
+	<name>example-domain</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 
 	<dependencies>
 		<dependency>
 			<groupId>org.uqbar-project</groupId>
 			<artifactId>uqbar-domain</artifactId>
-			<version>3.3</version>
+			<version>3.4-SNAPSHOT</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>net.sf.oval</groupId>
-			<artifactId>oval</artifactId>
-			<version>1.82</version>
-		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -34,4 +35,8 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+	    <sourceDirectory>src/main/scala</sourceDirectory>
+	    
+	</build>
 </project>

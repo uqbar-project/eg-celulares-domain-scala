@@ -33,7 +33,7 @@ public class ClientColeccionImpl extends CollectionBasedHome<Client> {
 	public List<Account> getAllAccounts(){
 		List<Account> allAccounts = new ArrayList<Account>();
 		for (Client client : allInstances()) {
-			allAccounts.addAll(client.getAccounts());
+			allAccounts.addAll(client.accounts());
 		}
 		
 		return allAccounts;
