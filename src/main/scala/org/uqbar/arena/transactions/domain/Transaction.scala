@@ -1,6 +1,7 @@
 package org.uqbar.arena.transactions.domain;
 
 import org.uqbar.commons.utils.TransactionalAndObservable;
+import scala.reflect.BeanProperty
 
 object Transaction {
   val SOURCE = "source"
@@ -9,11 +10,10 @@ object Transaction {
 
 }
 @TransactionalAndObservable
-class Transaction(var source: Account = null, var destination: Account = null, var amount: Double = 0) {
-
-  def this(){
-    this(null)
-  }
+class Transaction {
+  @BeanProperty var source: Account = null
+  @BeanProperty var destination: Account = null
+  @BeanProperty var amount: Double = 0d
   
   def execute() {
     source.withdraw(amount)
