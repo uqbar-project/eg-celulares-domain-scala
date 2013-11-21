@@ -49,8 +49,13 @@ public class ClientColeccionImpl extends CollectionBasedHome<Client> {
 
 
 	@Override
-	protected Predicate<Client> getCriterio(Client example) {
-		return getCriterioTodas();
+	protected Predicate<Client> getCriterio(final Client example) {
+		return new Predicate<Client>() {
+			@Override
+			public boolean evaluate(Client object) {
+				return 	example.name() == null || object.name().contains(example.name());
+			}
+		};
 	}
 
 
