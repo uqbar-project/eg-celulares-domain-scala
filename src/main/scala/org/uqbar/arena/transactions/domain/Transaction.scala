@@ -25,6 +25,5 @@ class Transaction {
     source != null && destination != null && amount > 0
   }
 
-  override def toString() = s"source: $source  destiny: $destination  amount: $amount"
-
+  override def toString() = s"Transfer (${source.owner.name} -> $$$amount -> ${destination.owner.name})"
 }
