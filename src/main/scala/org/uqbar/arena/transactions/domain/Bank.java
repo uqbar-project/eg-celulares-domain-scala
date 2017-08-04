@@ -3,34 +3,33 @@ package org.uqbar.arena.transactions.domain;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.uqbar.commons.model.Application;
+import org.uqbar.arena.transactions.domain.repo.DefaultPersistentRepoFactory;
+import org.uqbar.arena.transactions.domain.repo.RepoFactory;
 import org.uqbar.commons.model.Entity;
-import org.uqbar.commons.model.Home;
-
-import org.uqbar.arena.transactions.domain.home.DefaultPersistentHomeFactory;
-import org.uqbar.arena.transactions.domain.home.HomeFactory;
+import org.uqbar.commons.model.Repo;
+import org.uqbar.commons.model.application.Application;
 
 
 public class Bank implements Application {
 	private static Bank instance;
-	private Map<Class<?>, Home<?>> homes;
+	private Map<Class<?>, Repo<?>> Repos;
 
 	@SuppressWarnings("unchecked")
-	public synchronized <T extends Entity> Home<T> getHome(Class<? extends T> type) {
-		return (Home<T>) this.homes.get(type);
+	public synchronized <T extends Entity> Repo<T> getRepo(Class<? extends T> type) {
+		return (Repo<T>) this.Repos.get(type);
 	}
 
-	public static Bank  initialize(HomeFactory factory) {
+	public static Bank  initialize(RepoFactory factory) {
 		instance = new Bank ();
-		//HARDCODED: coupled with in-memory homes. 
-		Map<Class<?>, Home<?>> homes = new HashMap<Class<?>, Home<?>>();
-		factory.addHomes(homes);
-		instance.homes = homes;
+		//HARDCODED: coupled with in-memory Repos. 
+		Map<Class<?>, Repo<?>> Repos = new HashMap<Class<?>, Repo<?>>();
+		factory.addRepos(Repos);
+		instance.Repos = Repos;
 		return instance;
 	}
 	
 	public static synchronized Bank initialize() {
-		return initialize(new DefaultPersistentHomeFactory()); //default is to persist with db4o
+		return initialize(new DefaultPersistentRepoFactory()); //default is to persist with db4o
 //		return initialize(new InMemoryHomeFactory()); //default is to persist with db4o
 	}
 	

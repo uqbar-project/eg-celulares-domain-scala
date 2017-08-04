@@ -1,7 +1,6 @@
 package org.uqbar.arena.transactions.domain;
 
-import org.uqbar.commons.utils.TransactionalAndObservable;
-import scala.reflect.BeanProperty
+import org.uqbar.commons.model.annotations.TransactionalAndObservable
 
 object Transaction {
   val SOURCE = "source"

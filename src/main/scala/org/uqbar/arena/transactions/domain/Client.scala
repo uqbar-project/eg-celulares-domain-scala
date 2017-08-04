@@ -2,10 +2,10 @@ package org.uqbar.arena.transactions.domain;
 
 import java.util.ArrayList
 import org.uqbar.commons.model.Entity
-import org.uqbar.commons.utils.TransactionalAndObservable
 import scala.collection.JavaConversions._
 import scala.collection.JavaConverters._
 import scala.collection.mutable.Buffer
+import org.uqbar.commons.model.annotations.TransactionalAndObservable
 
 @TransactionalAndObservable
 class Client extends Entity {

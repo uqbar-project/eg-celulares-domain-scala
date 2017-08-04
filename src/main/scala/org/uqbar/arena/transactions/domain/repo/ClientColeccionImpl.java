@@ -1,4 +1,4 @@
-package org.uqbar.arena.transactions.domain.home;
+package org.uqbar.arena.transactions.domain.repo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.List;
 import org.apache.commons.collections15.Predicate;
 import org.uqbar.arena.transactions.domain.Account;
 import org.uqbar.arena.transactions.domain.Client;
-import org.uqbar.commons.model.CollectionBasedHome;
+import org.uqbar.commons.model.CollectionBasedRepo;
 
 
 
-public class ClientColeccionImpl extends CollectionBasedHome<Client> {
+public class ClientColeccionImpl extends CollectionBasedRepo<Client> {
 
 	public void init() {
 		this.create(generateClientWithAccounts(new Client(101010101L, "Dave", "1111", "dave@jappmail.com")));
@@ -46,7 +46,6 @@ public class ClientColeccionImpl extends CollectionBasedHome<Client> {
 	public Client createExample() {
 		return new Client();
 	}
-
 
 	@Override
 	protected Predicate<Client> getCriterio(final Client example) {

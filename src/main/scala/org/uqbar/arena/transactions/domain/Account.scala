@@ -1,9 +1,8 @@
-package org.uqbar.arena.transactions.domain;
+package org.uqbar.arena.transactions.domain
 
 import org.uqbar.commons.model.Entity
-import org.uqbar.commons.model.UserException
-import org.uqbar.commons.utils.TransactionalAndObservable
-import scala.reflect.BeanProperty
+import org.uqbar.commons.model.annotations.TransactionalAndObservable
+import org.uqbar.commons.model.exceptions.UserException
 
 @TransactionalAndObservable
 class Account extends Entity {
@@ -15,7 +14,7 @@ class Account extends Entity {
     this.balance = balance
     this.owner = owner
     owner.addAccount(this)
-    setId(id);
+    setId(id)
   }
 
   def this(owner: Client) {
