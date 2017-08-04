@@ -6,6 +6,6 @@ import org.uqbar.commons.model.Repo;
 
 public interface RepoFactory {
 
-	void addRepos(Map<Class<?>, Repo<?>> homes);
+	void addRepos(Map<Class<?>, Repo<?>> repos);
 
 }

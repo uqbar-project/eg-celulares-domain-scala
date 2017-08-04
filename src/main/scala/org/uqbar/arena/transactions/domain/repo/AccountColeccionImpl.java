@@ -12,12 +12,12 @@ public class AccountColeccionImpl extends CollectionBasedRepo<Account> {
 	}
 
 	public Account createExample() {
-		throw new UnsupportedOperationException("no");
+		throw new UnsupportedOperationException("Debe implementar un método que devuelva el prototipo para buscar");
 	}
 
 	@Override
 	protected Predicate<Account> getCriterio(Account example) {
-		throw new UnsupportedOperationException("No se puede crear un criterio ");
+		throw new UnsupportedOperationException("Debe implementar un criterio de búsqueda");
 	}
 
 }

@@ -52,10 +52,9 @@ public class ClientColeccionImpl extends CollectionBasedRepo<Client> {
 		return new Predicate<Client>() {
 			@Override
 			public boolean evaluate(Client object) {
-				return 	example.name() == null || object.name().contains(example.name());
+				return example.name() == null || object.name().contains(example.name());
 			}
 		};
 	}
-
 
 }
